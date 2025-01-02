@@ -1,0 +1,115 @@
+/* --- Importação da Fonte --- */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+/* --- Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #000428, #004e92);
+    color: #e4e4e4;
+    overflow: hidden;
+}
+
+/* --- Relógio Analógico --- */
+.analog {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #716e6e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.center {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #716e6e;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.hour, .minute, .second {
+    position: absolute;
+    width: 6px;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: translate(-50%, -100%);
+    z-index: 1;
+}
+
+.hour {
+    height: 50px;
+    background-color: #fff;
+}
+
+.minute {
+    height: 70px;
+    background-color: #ccc;
+}
+
+.second {
+    height: 85px;
+    background-color: red;
+}
+
+/* --- Relógio Digital --- */
+#digital-clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#digital-clock.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#digital-time {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #f1f1f2;
+    letter-spacing: 2px;
+}
+
+/* --- Botão --- */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+button:hover {
+    background-color: #444;
+}
